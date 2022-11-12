@@ -33,7 +33,6 @@ function teste(direcao){
         if (i < divs){
             scroll.setAttribute("href", link);
             barra.style.cssText = 'height: ' + per + '%;';
-            console.log(per);
         }else if(i === divs){
             scroll.setAttribute("href", "#l0");
             i=0;
@@ -45,7 +44,6 @@ function teste(direcao){
         stg = i.toString();
         link = '#l' + stg;
         per = per - 2*(100 / divs);
-        console.log(per);
         if (i <= divs){
             scroll2.setAttribute("href", link);
             barra.style.cssText = 'height: ' + per + '%;';
@@ -72,13 +70,16 @@ function mais(bloco){
     let corpo = document.getElementById('sec');
     let scroll = document.querySelector('#scroll');
     let scroll2 =  document.querySelector('#scroll2');
-    let img1 = document.querySelector('#um');
-    let img2 = document.querySelector('#dois');
-    let img3 = document.querySelector('#tres');
+    let img1 = document.querySelector('#um1');
+    let img2 = document.querySelector('#dois1');
+    let img3 = document.querySelector('#tres1');
+    let vid1 = document.querySelector('#um2');
+    let vid2 = document.querySelector('#dois2');
+    let vid3 = document.querySelector('#tres2');
     n += 1;
 
     if (n === 1){
-        corpo.style.cssText = 'filter: blur(10px);';
+        corpo.style.cssText = 'filter: blur(10px)';
         scroll.style.cssText = 'filter: blur(10px);';
         fotos.style.cssText = 'display: block';
         fechar.style.cssText = 'display: block;';
@@ -98,21 +99,49 @@ function mais(bloco){
     }
     
     if (bloco === 'um'){
-        img1.style.cssText = 'color: blue;';
-        img2.style.cssText = 'color: blue;';
-        img3.style.cssText = 'color: blue;';
+        img1.setAttribute("src", "../imagens/fif_game.jpeg");
+        img2.setAttribute("src", "../imagens/fifa_win.jpeg");
+        img3.setAttribute("src", "../imagens/fif_ last.jpeg");
+        vid1.setAttribute("src", "");
+        vid2.setAttribute("src", "");
+        vid3.setAttribute("src", "");
     }else if(bloco === 'dois'){
-        img1.style.cssText = 'color: white;';
-        img2.style.cssText = 'color: white;';
-        img3.style.cssText = 'color: white;';
+        img1.setAttribute("src", "../imagens/ff_e.jpeg");
+        img2.setAttribute("src", "");
+        img3.setAttribute("src", "");
+        vid1.setAttribute("src", "");
+        vid2.setAttribute("src", "../video/ff_m.mp4");
+        vid3.setAttribute("src", "../video/ff_d.mp4");
     }else if(bloco === 'tres'){
-        img1.style.cssText = 'color: orange;';
-        img2.style.cssText = 'color: orange;';
-        img3.style.cssText = 'color: orange;';
+        img1.setAttribute("src", "../imagens/rv_e.jpeg");
+        img2.setAttribute("src", "");
+        img3.setAttribute("src", "../imagens/rv_d.jpeg");
+        vid1.setAttribute("src", "");
+        vid2.setAttribute("src", "../video/rv_m.mp4");
+        vid3.setAttribute("src", "");
     }else if(bloco === 'quatro'){
-        img1.style.cssText = 'color: pink;';
-        img2.style.cssText = 'color: pink;';
-        img3.style.cssText = 'color: pink;';
+        img1.setAttribute("src", "../imagens/kh_e.jpeg");
+        img2.setAttribute("src", "");
+        img3.setAttribute("src", "");
+        vid1.setAttribute("src", "");
+        vid2.setAttribute("src", "../video/kh_m.mp4");
+        vid3.setAttribute("src", "../video/kh_d.mp4");
+    }
+
+    if (vid1.src != "file:///C:/Users/walla/Downloads/projeto-site-tech-week/paginas/jogos.html"){
+        img1.style.cssText = 'display: none;';
+    }else{
+        img1.style.cssText = 'display: block;';
+    }
+    if (vid2.src != "file:///C:/Users/walla/Downloads/projeto-site-tech-week/paginas/jogos.html"){
+        img2.style.cssText = 'display: none;';
+    }else{
+        img2.style.cssText = 'display: block;';
+    }
+    if (vid3.src != "file:///C:/Users/walla/Downloads/projeto-site-tech-week/paginas/jogos.html"){
+        img3.style.cssText = 'display: none;';
+    }else{
+        img3.style.cssText = 'display: block;';
     }
 
 }

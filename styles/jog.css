@@ -198,35 +198,35 @@ header{
     display: none;
 }
 .eitas{
-    height: 200px;
-    width: 200px;
+    height: 50%;
+    width: 30%;
     background-color: black;
     position: fixed;
     opacity: 1;
     z-index: 2;
-    top: 15%;
-    left: 15%;
+    top: 20%;
+    left: 5%;
     animation: nome 2s;
 }
 .eitas2{
-    height: 200px;
-    width: 200px;
-    background-color: black;
+    height: 50%;
+    width: 20%;
+    background-color: white;
     position: fixed;
     opacity: 1;
     z-index: 2;
-    top: 15%;
+    top: 20%;
     left: 43%;
     animation: nome 2s;
 }
 .eitas3{
-    height: 200px;
-    width: 200px;
-    background-color: black;
+    height: 50%;
+    width: 28%;
+    background-color: blue;
     position: fixed;
     opacity: 1;
     z-index: 2;
-    top: 15%;
+    top: 20%;
     left: 70%;  
     animation: nome 2s;
 }
@@ -257,4 +257,15 @@ header{
       0 0 102px orangered,
       0 0 151px orangered;
     transition: 1s;
+}
+#um1, #dois1, #tres1{
+    height: 100%;
+    width: 100%;
+    filter: brightness(80%);
+    display: block;
+}
+#um2, #dois2, #tres2{
+    height: 100%;
+    width: 100%;
+    filter: brightness(80%);
 }
