@@ -142,3 +142,23 @@ hr{
     height: 80px;
     width: 80px;
 }
+#barra{ 
+    margin-left: 99.8%;
+    top: 0%;
+    position: fixed;
+    z-index: -1;
+    background-color: orangered;
+    border: 0px;
+    width: 6px;
+    height: 0%;
+    box-shadow:
+      0 0 7px orangered,
+      0 0 10px orangered,
+      0 0 21px orangered,
+      0 0 42px orangered,
+      0 0 82px orangered,
+      0 0 92px orangered,
+      0 0 102px orangered,
+      0 0 151px orangered;
+    transition: 1s;
+}

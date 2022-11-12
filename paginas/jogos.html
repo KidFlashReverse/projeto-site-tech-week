@@ -9,7 +9,7 @@
     <title>Jogos</title>
 </head>
 <body>
-    <header id="hed">
+    <header id="l0">
         <div class="logo"><a href="../index.html"><img src="../imagens/logo (1).png" alt=""></a></div>
         <h1 id="tit">Jogos</h1>
     </header>
@@ -17,19 +17,22 @@
         <div id="fechar">
             <button onclick="mais()"><h1>X</h1></button>
         </div>
-        <div class="eitas2">
-            <p>Foto 1</p>
-        </div>
-        <div class="eitas3">
-            <p>Foto 2</p>
-        </div>
-        <div class="eitas">
-            <p>Foto 3</p>
+        <div id="fotos">
+            <div class="eitas2">
+                <p id="um">Foto 1</p>
+            </div>
+            <div class="eitas3">
+                <p id="dois">Foto 2</p>
+            </div>
+            <div class="eitas">
+                <p id="tres">Foto 3</p>
+            </div>
         </div>
     </article>
+    <div id="barra"></div>
+    <a href="#" class="scroll" onclick="teste('cima')" id="scroll2"  ><img src="../imagens/seta2.png" alt="" id="sc2"></a>
+    <a href="#" class="scroll" onclick="teste('baixo')" id="scroll"><img src="../imagens/seta2.png" alt="" id="sc"></a>
     <section id="sec">
-        <a href="#" class="scroll" onclick="teste2()" id="scroll2" style="display: none;"><img src="../imagens/seta2.png" alt="" id="sc2"></a>
-        <a href="#" class="scroll" onclick="teste()" id="scroll"><img src="../imagens/seta2.png" alt="" id="sc"></a>
         <div id="hr">
             <hr id="h1">
             <div class="FIFA" id="F">
@@ -40,7 +43,7 @@
                             Nele, participaram 12 competidores, que iam se desafiando no estilo mata-mata até a final. Nesta, competiram
                         os alunos Pedro Kauê (2° Ano C) e Jhenisson (3° Ano C). No final, Jhenisson acabou ganhando de 1x0, 
                         recebendo a recompensa de 50 reais, enquanto o 2° lugar ficou com R$20,00.</p>
-                    <div id="shad"><button class="but" onclick="mais()">Ver mais</button></div>
+                    <div id="shad"><button class="but" onclick="mais('um')">Ver mais</button></div>
                 </div>
                 
             </div>
@@ -55,6 +58,7 @@
                         disputam para ir para a final. As duas equipes da final foram 
                         das salas do 3°C e do 1°D, esta última levando a vitória.
                     </p>
+                    <div id="shad"><button class="but" onclick="mais('dois')">Ver mais</button></div>
                 </div>
             </div>
             <hr class="h2" id="l2">
@@ -67,6 +71,7 @@
                         Nele, haviam alguns jogos simples (sendo o mais jogado um de espaço)
                         para que as pessoas pudessem testar a tecnologia. 
                     </p>
+                    <div id="shad"><button class="but" onclick="mais('tres')">Ver mais</button></div>
                 </div>
             </div>
             <hr class="h2" id="l3">
@@ -81,6 +86,7 @@
                         o mais rápido possível (e corretamente), como um quiz.
                         Quem ganhava, levava um prêmio (alguns doces e lanches). 
                     </p>
+                    <div id="shad"><button class="but" onclick="mais('quatro')">Ver mais</button></div>
                 </div>
             </div>
             <hr class="h2">
