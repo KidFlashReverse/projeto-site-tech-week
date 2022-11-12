@@ -11,6 +11,13 @@ $(".scroll").click(function() {
     return false;
 });
 
+window.onload = function(){
+    let divs = $('.FIFA').length;
+    let barra = document.getElementById('barra');
+    per += 100 / divs;
+    barra.style.cssText = 'height: ' + per + '%;';
+}
+
 function teste(direcao){
     let scroll = document.getElementById('scroll');
     let scroll2 = document.getElementById('scroll2');
@@ -18,7 +25,7 @@ function teste(direcao){
     let barra = document.getElementById('barra');
     let divs = $('.FIFA').length;
     i += 1;
-    per += per + 100 / divs;
+    per += 100 / divs;
     let stg = i.toString();
     let link = '#l' + stg;
 
@@ -26,18 +33,22 @@ function teste(direcao){
         if (i < divs){
             scroll.setAttribute("href", link);
             barra.style.cssText = 'height: ' + per + '%;';
+            console.log(per);
         }else if(i === divs){
             scroll.setAttribute("href", "#l0");
             i=0;
-            barra.style.cssText = 'height: ' + 0 + '%;';
-            per = 0;
+            barra.style.cssText = 'height: ' + (100/divs) + '%;';
+            per = 100/divs;
         }
     }else if(direcao === 'cima'){
         i -= 2;
         stg = i.toString();
         link = '#l' + stg;
+        per = per - 2*(100 / divs);
+        console.log(per);
         if (i <= divs){
             scroll2.setAttribute("href", link);
+            barra.style.cssText = 'height: ' + per + '%;';
         }
     }
         
