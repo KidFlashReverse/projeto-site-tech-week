@@ -1,7 +1,9 @@
 var page = $("html, body");
 var i = 0;
 var n = 0;
+var per = 0;
 var animationDuration = 1000;
+
 $(".scroll").click(function() {
     page.animate({
         scrollTop: $($.attr(this, 'href')).offset().top
@@ -9,75 +11,97 @@ $(".scroll").click(function() {
     return false;
 });
 
-function teste(){
-    var scroll = document.getElementById('scroll');
-    var scroll2 = document.getElementById('scroll2');
-    var img = document.getElementById('sc');
+function teste(direcao){
+    let scroll = document.getElementById('scroll');
+    let scroll2 = document.getElementById('scroll2');
+    let img = document.getElementById('sc');
+    let barra = document.getElementById('barra');
+    let divs = $('.FIFA').length;
     i += 1;
-    if (i === 1){
-        scroll.setAttribute("href", "#l1");
-    }else if(i === 2){
-        scroll.setAttribute("href", "#l2");
-    }else if (i === 3){
-        scroll.setAttribute("href", "#l3");
-        img.setAttribute("src", "../imagens/seta3.png");
-    }else if(i === 4){
-        scroll.setAttribute("href", "#hed");
-        i=0;
+    per += per + 100 / divs;
+    let stg = i.toString();
+    let link = '#l' + stg;
+
+    if (direcao === 'baixo'){
+        if (i < divs){
+            scroll.setAttribute("href", link);
+            barra.style.cssText = 'height: ' + per + '%;';
+        }else if(i === divs){
+            scroll.setAttribute("href", "#l0");
+            i=0;
+            barra.style.cssText = 'height: ' + 0 + '%;';
+            per = 0;
+        }
+    }else if(direcao === 'cima'){
+        i -= 2;
+        stg = i.toString();
+        link = '#l' + stg;
+        if (i <= divs){
+            scroll2.setAttribute("href", link);
+        }
     }
-    if (i === 0){
+        
+    if (i === divs - 1){
+        img.setAttribute("src", "../imagens/seta3.png");
+    }else{
         img.setAttribute("src", "../imagens/seta2.png");
     }
-
+    
     if (i > 0){
         scroll2.setAttribute("style", "display: block;");
     }else{
         scroll2.setAttribute("style", "display: none;");
     }
-}
-function teste2(){
-    var scroll2 = document.getElementById('scroll2');
-    var img = document.getElementById('sc');
-    i -= 1;
-    if (i === 0){
-        scroll2.setAttribute("href", "#hed");
-    }else if(i === 1){
-        scroll2.setAttribute("href", "#l1");
-    }else if (i === 2){
-        scroll2.setAttribute("href", "#l2");
-        img.setAttribute("src", "../imagens/seta3.png");
-    }
-
-    if (i > 0){
-        scroll2.setAttribute("style", "display: block;");
-    }else{
-        scroll2.setAttribute("style", "display: none;");
-    }   
+    
 }
 
-function mais(){
-    var fechar = document.querySelector('#fechar');
-    var foto1 = document.querySelector('.eitas');
-    var foto2 = document.querySelector('.eitas2');
-    var foto3 = document.querySelector('.eitas3');
-    var corpo = document.getElementById('sec');
+function mais(bloco){
+    let fechar = document.querySelector('#fechar');
+    let fotos = document.querySelector('#fotos');
+    let corpo = document.getElementById('sec');
+    let scroll = document.querySelector('#scroll');
+    let scroll2 =  document.querySelector('#scroll2');
+    let img1 = document.querySelector('#um');
+    let img2 = document.querySelector('#dois');
+    let img3 = document.querySelector('#tres');
     n += 1;
-    console.log (n);
 
     if (n === 1){
         corpo.style.cssText = 'filter: blur(10px);';
-        foto1.style.cssText = 'display: block;';
-        foto2.style.cssText = 'display: block;';
-        foto3.style.cssText = 'display: block;';
+        scroll.style.cssText = 'filter: blur(10px);';
+        fotos.style.cssText = 'display: block';
         fechar.style.cssText = 'display: block;';
     }else{
         corpo.style.cssText = 'filter: blur(0px);';
-        foto1.style.cssText = 'display: none;';
-        foto2.style.cssText = 'display: none;';
-        foto3.style.cssText = 'display: none;';
+        scroll.style.cssText = 'filter: blur(0px);';
+        fotos.style.cssText = 'display: none';
         fechar.style.cssText = 'display: none;';
         n = 0;
     }
+    if(i != 0 && n === 1){
+        scroll2.style.cssText = 'display: block; filter: blur(10px);';
+    }else if(i != 0 && n != 1){
+        scroll2.style.cssText = 'display: block; filter: blur(0px);';
+    }else{
+        scroll2.style.cssText = 'filter: blur(0px);';
+    }
     
+    if (bloco === 'um'){
+        img1.style.cssText = 'color: blue;';
+        img2.style.cssText = 'color: blue;';
+        img3.style.cssText = 'color: blue;';
+    }else if(bloco === 'dois'){
+        img1.style.cssText = 'color: white;';
+        img2.style.cssText = 'color: white;';
+        img3.style.cssText = 'color: white;';
+    }else if(bloco === 'tres'){
+        img1.style.cssText = 'color: orange;';
+        img2.style.cssText = 'color: orange;';
+        img3.style.cssText = 'color: orange;';
+    }else if(bloco === 'quatro'){
+        img1.style.cssText = 'color: pink;';
+        img2.style.cssText = 'color: pink;';
+        img3.style.cssText = 'color: pink;';
+    }
 
 }
